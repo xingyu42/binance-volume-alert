@@ -16,8 +16,5 @@ COPY . .
 # 创建.env文件（如果不存在）
 RUN cp .env.example .env 2>/dev/null || touch .env
 
-# 暴露端口（虽然此应用不直接监听端口，但保留以备将来使用）
-EXPOSE 3000
-
 # 启动应用
 CMD ["npm", "start"]
