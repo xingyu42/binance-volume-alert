@@ -187,6 +187,48 @@ pm2 restart binance-monitor
 
 ## 安装部署
 
+### Docker 部署（推荐）
+
+项目现在支持 Docker 部署，这是最简单的部署方式。
+
+1. 安装 Docker 和 Docker Compose：
+   - [Docker 安装指南](https://docs.docker.com/get-docker/)
+   - [Docker Compose 安装指南](https://docs.docker.com/compose/install/)
+
+2. 配置环境变量：
+   复制 `.env.example` 文件并重命名为 `.env`：
+```bash
+cp .env.example .env
+```
+   然后编辑 `.env` 文件，填入你的配置。
+
+3. 构建并启动容器：
+```bash
+# 使用 docker-compose 启动
+docker-compose up -d
+
+# 查看容器状态
+docker-compose ps
+
+# 查看日志
+docker-compose logs -f
+```
+
+4. 停止服务：
+```bash
+# 停止容器
+docker-compose down
+```
+
+5. 更新服务：
+```bash
+# 拉取最新代码
+git pull origin master
+
+# 重新构建并启动
+docker-compose up -d --build
+```
+
 ### 本地开发环境
 1. 克隆项目并安装依赖：
 ```bash
